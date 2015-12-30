@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Random Chance Chart for Magik Weapons</title>
+        <style>
+            .weapon {
+                margin: 1em;
+            }
+            .weapon:nth-chil(2n) {
+                background: #ddd;
+            }
+        </style>
+    </head>
 <body>
 <h1>RANDOM CHANCE CHART<br>FOR MAGIK WEAPONS</h1>
     <p>This is web app generates magikal weapons following the chart from the 
@@ -72,13 +83,13 @@
             t = Math.round(Math.random() * 12) + "' "+t;        
         }
         
-        console.log("Type:<strong>"+t+"</strong>"
+        /*console.log("Type:<strong>"+t+"</strong>"
                     +"Int:"+i
                     +" Ego:"+e
                     +" Special:"+powers
-                    +" Abilities:"+abilities);
+                    +" Abilities:"+abilities);*/
         
-        var str = "<p>Type:"+t
+        var str = "<div class='weapon'><p>Type:<strong>"+t+"</strong>"
                     +" Int:"+i
                     +" Ego:"+e;
         if (numberOfPowers) {
@@ -102,6 +113,8 @@
         if (numberOfAbilities) {
             
         }
+        
+        str += "</div>";
                   
         $("#weapons").append(str);
         
